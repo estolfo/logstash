@@ -518,7 +518,7 @@ class LogStash::Agent
       LogStash::Instrument::NullMetric.new(@collector)
     end
 
-    @periodic_pollers = LogStash::Instrument::PeriodicPollers.new(@metric, settings.get("queue.type"), self)
+    @periodic_pollers = LogStash::Instrument::PeriodicPollers.new(@metric, settings.get("queue.type"), self, settings)
     @periodic_pollers.start
   end
 
